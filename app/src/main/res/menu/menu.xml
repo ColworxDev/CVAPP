@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        app:showAsAction="always"
+        android:icon="@drawable/telegram_icon"
+        android:id="@+id/menu_item_telegram"
+        android:title="telegram"/>
+
+    <item
+        app:showAsAction="always"
+        android:icon="@drawable/lin_icon"
+        android:id="@+id/menu_item_linkin"
+        android:title="linkedIn" />
+
+    <item
+        app:showAsAction="never"
+        android:id="@+id/menu_item_whatsapp"
+        android:title="Export" />
+
+    <item
+        app:showAsAction="never"
+        android:id="@+id/menu_item_gmail"
+        android:title="To Edit click individual Texts" />
+
+
+</menu>

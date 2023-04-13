@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">CVAPP</string>
+
+    <string-array name="education_items">
+        <item>High school during 2007-2009</item>
+        <item>Graduation school during 2009-2013</item>
+        <item>Masters school during 2022-2023</item>
+    </string-array>
+
+    <string-array name="skills_items">
+        <item>Android App Development 6/10</item>
+        <item>Java Programming 6/10</item>
+        <item>Hybrid App Development</item>
+    </string-array>
+
+    <string-array name="certification_items">
+        <item>Microsoft certified in JAVA 6/10</item>
+        <item>Kotlin Certification 6/10</item>
+        <item>AWS Certification</item>
+    </string-array>
+
+    <string-array name="project_items">
+        <item>Microsoft certified in JAVA 6/10</item>
+        <item>Kotlin Certification 6/10</item>
+        <item>AWS Certification</item>
+    </string-array>
+</resources>
