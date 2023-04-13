@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.WebviewActivity">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:onClick="onBackPressed"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:src="@drawable/chevron_left"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/edtSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textWebEditText"
+        android:hint="Search"
+        android:layout_toRightOf="@+id/btnBack"
+        android:layout_toLeftOf="@+id/btnFwd"
+        />
+
+    <ImageButton
+        android:id="@+id/btnFwd"
+        android:onClick="onFWDPressed"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:src="@drawable/chevron_right"
+        />
+    <WebView
+        android:layout_below="@+id/edtSearch"
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

@@ -1,12 +1,13 @@
 package com.example.cvapp.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.viewpager2.widget.ViewPager2
-import com.example.cvapp.adapter.MyPageAdapter
 import com.example.cvapp.R
+import com.example.cvapp.adapter.MyPageAdapter
 import com.example.cvapp.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 
@@ -65,7 +66,22 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_item_linkin -> loadURL("https://linkedin.com")
+            R.id.menu_item_telegram -> loadURL("https://github.com")
+            R.id.menu_item_whatsapp -> exportPDF()
+        }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun exportPDF() {
+
+    }
+
+    fun loadURL(url: String) {
+        val intent = Intent(this, WebviewActivity::class.java)
+        intent.putExtra("url", url)
+        startActivity(intent)
     }
 
 }
