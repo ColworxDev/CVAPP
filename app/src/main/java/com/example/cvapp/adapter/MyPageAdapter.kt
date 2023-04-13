@@ -1,8 +1,12 @@
-package com.example.cvapp
+package com.example.cvapp.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.cvapp.fragment.HomeFragment
+import com.example.cvapp.fragment.ProjectsFragment
+import com.example.cvapp.fragment.SkillsFragment
+import com.example.cvapp.fragment.WorkFragment
 
 class MyPageAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount()=4

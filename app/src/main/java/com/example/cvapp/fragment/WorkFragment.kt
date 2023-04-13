@@ -1,4 +1,4 @@
-package com.example.cvapp
+package com.example.cvapp.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

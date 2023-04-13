@@ -1,12 +1,14 @@
-package com.example.cvapp
+package com.example.cvapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.viewpager2.widget.ViewPager2
+import com.example.cvapp.adapter.MyPageAdapter
+import com.example.cvapp.R
 import com.example.cvapp.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -58,19 +60,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu):Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu, menu)
-        // Whatever you typed to search the content, will be received using SearchManager object
-        //   val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
-        // get the currently set action view for this menu item which returns View and cast it as a SearchView
-        //val searchView = menu.findItem(R.id.menu_item_search).actionView as SearchView
-        // Set Search bar hint
-        //searchView.queryHint= "Search name"
-        // Gets information about a searchable activity (Activity exist, searchable activity or null)
-        // Direct the SearchView to the activity that will get the result
-        // searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
-        // Listener to perform the search based on the types text
-        //searchView.setOnQueryTextListener(this)
         return super.onCreateOptionsMenu(menu)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
+    }
+
 }
