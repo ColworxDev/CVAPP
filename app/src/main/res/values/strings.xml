@@ -2,26 +2,37 @@
     <string name="app_name">CVAPP</string>
 
     <string-array name="education_items">
-        <item>High school during 2007-2009</item>
-        <item>Graduation school during 2009-2013</item>
-        <item>Masters school during 2022-2023</item>
+        <item>Maharishi International University (Ongoing)</item>
+        <item>EastWest University of Bangladesh 2012 - 2015</item>
+        <item>Sent Joseph College 2008 - 2010</item>
+        <item>Gulshan Model Higher Secondary School (Passing Year - 2008)</item>
     </string-array>
 
     <string-array name="skills_items">
         <item>Android App Development 6/10</item>
         <item>Java Programming 6/10</item>
-        <item>Hybrid App Development</item>
+        <item>Wordpress Development 8/10</item>
+        <item>Spring Boot 6/10</item>
+        <item>PHP 7/10</item>
     </string-array>
 
     <string-array name="certification_items">
-        <item>Microsoft certified in JAVA 6/10</item>
-        <item>Kotlin Certification 6/10</item>
+        <item>Orcale certified in JAVA 6/10</item>
         <item>AWS Certification</item>
     </string-array>
 
+    <string-array name="work_history">
+        <item>Technical Project Lead at LCM (2021-2022)</item>
+        <item>Project Manager at Eduera (January 2020 - April 2020)</item>
+        <item>Programmer at Southeast University of Bangladesh (2017 - 2019)</item>
+        <item>Freelancer at Upwork (2015 - 2019)</item>
+    </string-array>
+
     <string-array name="project_items">
-        <item>Microsoft certified in JAVA 6/10</item>
-        <item>Kotlin Certification 6/10</item>
-        <item>AWS Certification</item>
+        <item>Seramount.com - a WP based web application</item>
+        <item>Web application for Harvard Graduate School of Design - WP based</item>
+        <item>Web application for National Institutes od Health (NIH) - WP based</item>
+        <item>E-learning Platform (Eduera) - PHP based</item>
+        <item>University Management System for Southeast University ob Bangladesh - Spring Boot</item>
     </string-array>
 </resources>
