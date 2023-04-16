@@ -16,7 +16,7 @@ class SkillAdapter(
         val binding = ItemSkillBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding).apply {
             binding.rbLevel.setOnRatingBarChangeListener { _, rating, _ ->
-                skill = skill?.copy(level = rating)
+                skill?.level = rating
             }
             itemView.setOnClickListener {
                 skill?.let(onSkillClick::invoke)
