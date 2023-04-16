@@ -5,7 +5,7 @@
     <item
         app:showAsAction="always"
         android:icon="@drawable/menu_github_icon"
-        android:id="@+id/menu_item_telegram"
+        android:id="@+id/menu_item_github"
         android:title="Github"/>
 
     <item
@@ -16,12 +16,12 @@
 
     <item
         app:showAsAction="never"
-        android:id="@+id/menu_item_whatsapp"
+        android:id="@+id/menu_item_export"
         android:title="Export" />
 
     <item
         app:showAsAction="never"
-        android:id="@+id/menu_item_gmail"
+        android:id="@+id/menu_item_edit"
         android:title="To Edit click individual Texts" />
 
 

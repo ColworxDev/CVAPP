@@ -5,9 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import androidx.fragment.app.Fragment
 import com.example.cvapp.R
-import com.example.cvapp.databinding.FragmentHomeBinding
 import com.example.cvapp.databinding.FragmentProjectsBinding
 import com.example.cvapp.other.DialogHelper
 
@@ -22,10 +20,10 @@ class ProjectsFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_projects, container, false)
-        binding = FragmentProjectsBinding.bind(view)
+        rootView = inflater.inflate(R.layout.fragment_projects, container, false)
+        binding = FragmentProjectsBinding.bind(rootView)
 
-        val homeListArray = resources.getStringArray(R.array.project_items).toList()
+        val homeListArray = getStringArrayWith(R.array.project_items)
         adapter = ArrayAdapter(ctx, android.R.layout.simple_list_item_1, homeListArray)
         adapter.setNotifyOnChange(true)
         binding.listProjects.adapter = adapter
@@ -34,7 +32,7 @@ class ProjectsFragment : BaseFragment() {
             var item = adapter.getItem(position)!!
 
             DialogHelper(
-                binding.root.context,
+                ctx,
                 getStringWith(R.string.text_confirm),
                 "${getStringWith(R.string.text_delete_note)} \n$item"
             ).createDialogConfirm {
@@ -43,7 +41,7 @@ class ProjectsFragment : BaseFragment() {
                 }
             }
         }
-        return view
+        return rootView
     }
 
     override fun onClickFAB() {

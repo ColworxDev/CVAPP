@@ -14,8 +14,8 @@ open class BaseFragment: Fragment() {
         //do nothing
     }
 
-    fun getStringWith(id: Int) = requireView().context.resources.getString(id)
-    fun getStringArrayWith(id: Int) = requireView().context.resources.getStringArray(id).toList()
+    fun getStringWith(id: Int) = ctx.resources.getString(id)
+    fun getStringArrayWith(id: Int) = ctx.resources.getStringArray(id).toList()
 
 
     open fun onClickFAB() {
