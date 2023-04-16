@@ -28,9 +28,9 @@
         />
 
     <ListView
+        android:id="@+id/list_work"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.4"
-        android:entries="@array/work_history"/>
+        android:layout_weight="0.4"/>
 
 </LinearLayout>

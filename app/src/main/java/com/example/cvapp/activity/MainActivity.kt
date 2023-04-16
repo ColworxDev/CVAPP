@@ -1,6 +1,7 @@
 package com.example.cvapp.activity
 
 import android.content.Intent
+import android.net.wifi.p2p.WifiP2pManager.ActionListener
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -9,17 +10,20 @@ import androidx.viewpager2.widget.ViewPager2
 import com.example.cvapp.R
 import com.example.cvapp.adapter.MyPageAdapter
 import com.example.cvapp.databinding.ActivityMainBinding
+import com.example.cvapp.other.DialogHelper
 import com.google.android.material.tabs.TabLayout
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ActionListener{
     private lateinit var binding: ActivityMainBinding
+    private lateinit var myPageAdapter: MyPageAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val myPageAdapter = MyPageAdapter(this)
+        myPageAdapter = MyPageAdapter(this)
+        myPageAdapter.createFragments()
         // Set the Adapter to your Viewpager UI
         binding.vpager.adapter = myPageAdapter
         // Will align the space according to the Screen size to equally spread
@@ -49,8 +53,9 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+
         binding.fab.setOnClickListener {
-            print("fab pressed")
+            myPageAdapter.onActionFAB(binding.vpager.currentItem)
         }
     }
 
@@ -76,12 +81,21 @@ class MainActivity : AppCompatActivity() {
 
     fun exportPDF() {
 
+
     }
 
     fun loadURL(url: String) {
         val intent = Intent(this, WebviewActivity::class.java)
         intent.putExtra("url", url)
         startActivity(intent)
+    }
+
+    override fun onSuccess() {
+        TODO("Not yet implemented")
+    }
+
+    override fun onFailure(p0: Int) {
+        TODO("Not yet implemented")
     }
 
 }

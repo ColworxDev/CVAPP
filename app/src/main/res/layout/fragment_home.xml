@@ -39,6 +39,7 @@
             android:text="Mickey Mouse"
             android:textColor="@color/white"
             android:textSize="@dimen/heading_fonts"
+            android:clickable="true"
             />
 
         <TextView
@@ -46,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Software Engineer"
+            android:clickable="true"
             android:textColor="@color/white"
             android:textSize="@dimen/heading_fonts"
             android:layout_toRightOf="@+id/imageviewProfile"
@@ -57,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+6414517162"
+            android:clickable="true"
             android:textColor="@color/white"
             android:textSize="@dimen/heading_fonts"
             android:layout_toRightOf="@+id/imageviewProfile"
@@ -71,6 +74,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/heading_fonts"
             android:layout_marginTop="10dp"
+            android:clickable="true"
             android:layout_toRightOf="@+id/imageviewProfile"
             android:layout_below="@+id/textViewPhone"
             />
@@ -134,6 +138,7 @@
         android:text="This is my bio description, i have n number of experience in a field"
         android:textColor="@color/black"
         android:layout_marginLeft="20dp"
+        android:clickable="true"
         android:textSize="@dimen/heading_fonts"
         />
 
@@ -152,8 +157,8 @@
         />
 
     <ListView
+        android:id="@+id/home_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/education_items"/>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
