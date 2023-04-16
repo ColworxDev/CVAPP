@@ -11,7 +11,7 @@ import com.example.cvapp.databinding.FragmentHomeBinding
 import com.example.cvapp.other.DialogHelper
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: ArrayAdapter<String>
@@ -21,11 +21,11 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_home,container,false)
-        binding = FragmentHomeBinding.bind(view)
+        rootView = inflater.inflate(R.layout.fragment_home,container,false)
+        binding = FragmentHomeBinding.bind(rootView)
 
-        val homeListArray = resources.getStringArray(R.array.education_items).toList()
-        adapter = ArrayAdapter(view.context, android.R.layout.simple_list_item_1, homeListArray)
+        val homeListArray = getStringArrayWith(R.array.education_items)
+        adapter = ArrayAdapter(ctx, android.R.layout.simple_list_item_1, homeListArray)
         adapter.setNotifyOnChange(true)
         binding.homeList.adapter = adapter
 
@@ -34,8 +34,8 @@ class HomeFragment : Fragment() {
 
             DialogHelper(
                 binding.root.context,
-                "Confirm",
-                "Are you sure you want to delete this item? \n$item"
+                getStringWith(R.string.text_confirm),
+                "${getStringWith(R.string.text_delete_note)} \n$item"
             ).createDialogConfirm {
                 if (it) {
                     adapter.remove(item)
@@ -44,32 +44,32 @@ class HomeFragment : Fragment() {
         }
 
         binding.textViewProfileTitle.setOnClickListener {
-            DialogHelper(requireActivity(), "Edit", "Edit your full Name").createDialog(binding.textViewProfileTitle.text.toString()) {
+            DialogHelper(ctx, getStringWith(R.string.text_edit), getStringWith(R.string.text_edit_name_note)).createDialog(binding.textViewProfileTitle.text.toString()) {
                 binding.textViewProfileTitle.text = it
             }
         }
 
         binding.textViewProfileSubTitle.setOnClickListener {
-            DialogHelper(requireActivity(), "Edit", "Edit your profession").createDialog(binding.textViewProfileSubTitle.text.toString()) {
+            DialogHelper(ctx, getStringWith(R.string.text_edit), getStringWith(R.string.text_edit_profession_note)).createDialog(binding.textViewProfileSubTitle.text.toString()) {
                 binding.textViewProfileSubTitle.text = it
             }
         }
 
         binding.textViewAddress.setOnClickListener {
-            DialogHelper(requireActivity(), "Edit", "Edit your Address").createDialog(binding.textViewAddress.text.toString()) {
+            DialogHelper(requireActivity(), getStringWith(R.string.text_edit), getStringWith(R.string.text_edit_address_note)).createDialog(binding.textViewAddress.text.toString()) {
                 binding.textViewAddress.text = it
             }
         }
 
 
         binding.textViewPhone.setOnClickListener {
-            DialogHelper(requireActivity(), "Edit", "Edit your Phone").createDialog(binding.textViewPhone.text.toString()) {
+            DialogHelper(requireActivity(), getStringWith(R.string.text_edit), getStringWith(R.string.text_edit_phone_note)).createDialog(binding.textViewPhone.text.toString()) {
                 binding.textViewPhone.text = it
             }
         }
 
         binding.textViewBio.setOnClickListener {
-            DialogHelper(requireActivity(), "Edit", "Edit your Bio Summary").createDialog(binding.textViewBio.text.toString()) {
+            DialogHelper(requireActivity(), getStringWith(R.string.text_edit), getStringWith(R.string.text_edit_bio_summary)).createDialog(binding.textViewBio.text.toString()) {
                 binding.textViewBio.text = it
             }
         }
@@ -77,8 +77,8 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    fun onClickFAB() {
-        DialogHelper(binding.root.context, "Add", "Add new Education Item").createDialog("") {
+    override fun onClickFAB() {
+        DialogHelper(ctx, getStringWith(R.string.text_add), getStringWith(R.string.text_add_edu_note)).createDialog("") {
             adapter.add(it)
         }
     }

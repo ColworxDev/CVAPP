@@ -12,7 +12,7 @@ import com.example.cvapp.databinding.FragmentProjectsBinding
 import com.example.cvapp.other.DialogHelper
 
 
-class ProjectsFragment : Fragment() {
+class ProjectsFragment : BaseFragment() {
 
     private lateinit var binding: FragmentProjectsBinding
     private lateinit var adapter: ArrayAdapter<String>
@@ -26,7 +26,7 @@ class ProjectsFragment : Fragment() {
         binding = FragmentProjectsBinding.bind(view)
 
         val homeListArray = resources.getStringArray(R.array.project_items).toList()
-        adapter = ArrayAdapter(view.context, android.R.layout.simple_list_item_1, homeListArray)
+        adapter = ArrayAdapter(ctx, android.R.layout.simple_list_item_1, homeListArray)
         adapter.setNotifyOnChange(true)
         binding.listProjects.adapter = adapter
 
@@ -35,20 +35,19 @@ class ProjectsFragment : Fragment() {
 
             DialogHelper(
                 binding.root.context,
-                "Confirm",
-                "Are you sure you want to delete this item? \n$item"
+                getStringWith(R.string.text_confirm),
+                "${getStringWith(R.string.text_delete_note)} \n$item"
             ).createDialogConfirm {
                 if (it) {
                     adapter.remove(item)
                 }
             }
         }
-
         return view
     }
 
-    fun onClickFAB() {
-        DialogHelper(binding.root.context, "Add", "Add new Project Item").createDialog("") {
+    override fun onClickFAB() {
+        DialogHelper(ctx, getStringWith(R.string.text_add), getStringWith(R.string.text_add_project_note)).createDialog("") {
             adapter.add(it)
         }
     }

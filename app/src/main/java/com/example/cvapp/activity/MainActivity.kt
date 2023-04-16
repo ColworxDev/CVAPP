@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
 import com.example.cvapp.R
 import com.example.cvapp.adapter.MyPageAdapter
@@ -13,7 +14,7 @@ import com.example.cvapp.databinding.ActivityMainBinding
 import com.example.cvapp.other.DialogHelper
 import com.google.android.material.tabs.TabLayout
 
-class MainActivity : AppCompatActivity(), ActionListener{
+class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var myPageAdapter: MyPageAdapter
 
@@ -59,12 +60,6 @@ class MainActivity : AppCompatActivity(), ActionListener{
         }
     }
 
-    private fun setCurrentFragment() {
-//        supportFragmentManager.beginTransaction().apply {
-//            replace(R.id.tlayout,
-//        }
-    }
-
     override fun onCreateOptionsMenu(menu: Menu):Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
@@ -79,23 +74,15 @@ class MainActivity : AppCompatActivity(), ActionListener{
         return super.onOptionsItemSelected(item)
     }
 
-    fun exportPDF() {
-
-
+    private fun exportPDF() {
+        //pending
+        Toast.makeText(this, "Work in progress", Toast.LENGTH_SHORT).show()
     }
 
-    fun loadURL(url: String) {
+    private fun loadURL(url: String) {
         val intent = Intent(this, WebviewActivity::class.java)
         intent.putExtra("url", url)
         startActivity(intent)
-    }
-
-    override fun onSuccess() {
-        TODO("Not yet implemented")
-    }
-
-    override fun onFailure(p0: Int) {
-        TODO("Not yet implemented")
     }
 
 }

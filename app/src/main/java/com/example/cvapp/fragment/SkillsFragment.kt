@@ -11,10 +11,11 @@ import com.example.cvapp.databinding.FragmentSkillsBinding
 import com.example.cvapp.other.DialogHelper
 
 
-class SkillsFragment : Fragment() {
+class SkillsFragment : BaseFragment() {
 
     private lateinit var binding: FragmentSkillsBinding
     private lateinit var adapter: ArrayAdapter<String>
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,11 +23,11 @@ class SkillsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.fragment_skills, container, false)
-        binding = FragmentSkillsBinding.bind(view)
+        rootView = inflater.inflate(R.layout.fragment_skills, container, false)
+        binding = FragmentSkillsBinding.bind(rootView)
 
-        val homeListArray = resources.getStringArray(R.array.skills_items).toList()
-        adapter = ArrayAdapter(view.context, android.R.layout.simple_list_item_1, homeListArray)
+        val homeListArray = getStringArrayWith(R.array.skills_items)
+        adapter = ArrayAdapter(ctx, android.R.layout.simple_list_item_1, homeListArray)
         adapter.setNotifyOnChange(true)
         binding.listSkills.adapter = adapter
 
@@ -34,20 +35,20 @@ class SkillsFragment : Fragment() {
             var item = adapter.getItem(position)!!
 
             DialogHelper(
-                binding.root.context,
-                "Confirm",
-                "Are you sure you want to delete this item? \n$item"
+                ctx,
+                getStringWith(R.string.text_cancel),
+                "${getStringWith(R.string.text_delete_note)} \n$item"
             ).createDialogConfirm {
                 if (it) {
                     adapter.remove(item)
                 }
             }
         }
-        return view
+        return rootView
     }
 
-    fun onClickFAB() {
-        DialogHelper(binding.root.context, "Add", "Add new Skills Item").createDialog("") {
+    override fun onClickFAB() {
+        DialogHelper(ctx, getStringWith(R.string.text_add), getStringWith(R.string.text_add_skill_note)).createDialog("") {
             adapter.add(it)
         }
     }

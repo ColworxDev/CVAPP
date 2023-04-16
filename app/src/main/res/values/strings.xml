@@ -1,5 +1,20 @@
 <resources>
     <string name="app_name">CVAPP</string>
+    <string name="text_delete_note">Are you sure you want to delete this item?</string>
+    <string name="text_add_skill_note">Add new Skills Item</string>
+    <string name="text_add_work_note">Add new Work Record</string>
+    <string name="text_add_project_note">Add new Project Item</string>
+    <string name="text_add_edu_note">Add new Education Item</string>
+    <string name="text_edit_name_note">Edit your full Name</string>
+    <string name="text_edit_profession_note">"Edit your profession"</string>
+    <string name="text_edit_address_note">Edit your Address</string>
+    <string name="text_edit_phone_note">Edit your Phone</string>
+    <string name="text_edit_bio_summary">Edit your Bio Summary</string>
+    <string name="text_edit">Edit</string>
+    <string name="text_submit">Submit</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_confirm">Confirm</string>
+    <string name="text_add">Add</string>
 
     <string-array name="education_items">
         <item>Maharishi International University (Ongoing)</item>

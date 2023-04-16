@@ -3,44 +3,26 @@ package com.example.cvapp.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.cvapp.fragment.HomeFragment
-import com.example.cvapp.fragment.ProjectsFragment
-import com.example.cvapp.fragment.SkillsFragment
-import com.example.cvapp.fragment.WorkFragment
+import com.example.cvapp.fragment.*
 
 class MyPageAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
     fun createFragments() {
-        home = HomeFragment()
-        skills = SkillsFragment()
-        work = WorkFragment()
-        projects = ProjectsFragment()
+        items = arrayOf(
+            HomeFragment(),
+            SkillsFragment(),
+            WorkFragment(),
+            ProjectsFragment()
+        ).toList()
     }
 
-    override fun getItemCount()=4
+    override fun getItemCount() = items.size
 
-    private lateinit var home : HomeFragment
-    private lateinit var skills : SkillsFragment
-    private lateinit var work : WorkFragment
-    private lateinit var projects : ProjectsFragment
+    private lateinit var items: List<BaseFragment>
 
-    override fun createFragment(position: Int): Fragment {
-        return when(position){
-            0 -> home
-            1 -> skills
-            2 -> work
-            3 -> projects
-            else -> Fragment()
-        }
-    }
+    override fun createFragment(position: Int) = items[position]
 
     fun onActionFAB(currentItem: Int) {
-        when (currentItem) {
-            0 -> home.onClickFAB()
-            1 -> skills.onClickFAB()
-            2 -> work.onClickFAB()
-            3 -> projects.onClickFAB()
-            else -> println("Do nothing")
-        }
+        items[currentItem].onClickFAB()
     }
 }

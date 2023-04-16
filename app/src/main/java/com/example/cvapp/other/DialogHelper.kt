@@ -4,21 +4,22 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.widget.EditText
-
+import com.example.cvapp.R
 
 
 class DialogHelper(private val context: Context, val title: String, val msg: String) {
+
 
     fun createDialogConfirm(listener: (Boolean) -> Unit) {
         val alert = AlertDialog.Builder(context)
         alert.setTitle(title)
         alert.setMessage(msg)
 
-        alert.setPositiveButton("Submit")  { dialogInterface: DialogInterface, i: Int ->
+        alert.setPositiveButton(context.getString(R.string.text_submit))  { dialogInterface: DialogInterface, i: Int ->
             listener(true)
         }
 
-        alert.setNegativeButton("Cancel")  { dialogInterface: DialogInterface, i: Int ->
+        alert.setNegativeButton(context.getString(R.string.text_cancel))  { dialogInterface: DialogInterface, i: Int ->
             println("do nothing")
         }
         alert.show()
@@ -32,11 +33,11 @@ class DialogHelper(private val context: Context, val title: String, val msg: Str
         editText.setText(text)
         alert.setView(editText)
 
-        alert.setPositiveButton("Submit")  { dialogInterface: DialogInterface, i: Int ->
+        alert.setPositiveButton(context.getString(R.string.text_submit))  { dialogInterface: DialogInterface, i: Int ->
             listener(editText.text.toString())
         }
 
-        alert.setNegativeButton("Cancel")  { dialogInterface: DialogInterface, i: Int ->
+        alert.setNegativeButton(context.getString(R.string.text_cancel))  { dialogInterface: DialogInterface, i: Int ->
             println("do nothing")
         }
         alert.show()
