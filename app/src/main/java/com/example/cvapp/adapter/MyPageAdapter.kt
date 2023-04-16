@@ -37,6 +37,7 @@ class MyPageAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(f
     fun onActionFAB(currentItem: Int) {
         when (currentItem) {
             0 -> home.onClickFAB()
+            1 -> skills.onClickFAB()
             2 -> work.onClickFAB()
             3 -> projects.onClickFAB()
             else -> println("Do nothing")
