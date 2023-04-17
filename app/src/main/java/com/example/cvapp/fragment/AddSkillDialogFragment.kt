@@ -15,7 +15,8 @@ import com.example.cvapp.other.Constants
 
 class AddSkillDialogFragment : DialogFragment() {
 
-    private var binding: DiaglogFragmentAddSkillBinding? = null
+    private var _binding: DiaglogFragmentAddSkillBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,13 +25,13 @@ class AddSkillDialogFragment : DialogFragment() {
     ): View? {
         return inflater.inflate(R.layout.diaglog_fragment_add_skill, container, false)
             .apply {
-                binding = DiaglogFragmentAddSkillBinding.bind(this)
+                _binding = DiaglogFragmentAddSkillBinding.bind(this)
             }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        with(requireBinding()) {
+        with(binding) {
             btnConfirm.setOnClickListener {
                 val skill = tvSkill.text.toString()
                 if (skill.isBlank()) {
@@ -48,10 +49,8 @@ class AddSkillDialogFragment : DialogFragment() {
         }
     }
 
-    private fun requireBinding(): DiaglogFragmentAddSkillBinding = binding!!
-
     override fun onDestroyView() {
-        binding = null // to prevent memory leak
+        _binding = null // to prevent memory leak
         super.onDestroyView()
     }
 }
