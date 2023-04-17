@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cvapp.R
+import com.example.cvapp.adapter.EducationAdapter
 import com.example.cvapp.databinding.FragmentHomeBinding
 import com.example.cvapp.other.DialogHelper
 
@@ -14,43 +14,49 @@ import com.example.cvapp.other.DialogHelper
 class HomeFragment : BaseFragment() {
 
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var adapter: ArrayAdapter<String>
+    private lateinit var adapter: EducationAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        rootView = inflater.inflate(R.layout.fragment_home,container,false)
+    ): View {
+        rootView = inflater.inflate(R.layout.fragment_home, container, false)
         binding = FragmentHomeBinding.bind(rootView)
 
         val homeListArray = getStringArrayWith(R.array.education_items)
-        adapter = ArrayAdapter(ctx, android.R.layout.simple_list_item_1, homeListArray)
-        adapter.setNotifyOnChange(true)
-        binding.homeList.adapter = adapter
-
-        binding.homeList.setOnItemClickListener { parent, view, position, id ->
-            var item = adapter.getItem(position)!!
-
-            DialogHelper(
-                binding.root.context,
-                getStringWith(R.string.text_confirm),
-                "${getStringWith(R.string.text_delete_note)} \n$item"
-            ).createDialogConfirm {
-                if (it) {
-                    adapter.remove(item)
+        adapter = EducationAdapter(
+            educations = homeListArray.toMutableList(),
+            onItemClick = { item ->
+                DialogHelper(
+                    binding.root.context,
+                    getStringWith(R.string.text_confirm),
+                    "${getStringWith(R.string.text_delete_note)} \n$item"
+                ).createDialogConfirm {
+                    if (it) {
+                        adapter.remove(item)
+                    }
                 }
             }
-        }
-
+        )
+        binding.rvEdu.adapter = adapter
+        binding.rvEdu.layoutManager = LinearLayoutManager(requireContext())
         binding.textViewProfileTitle.setOnClickListener {
-            DialogHelper(ctx, getStringWith(R.string.text_edit), getStringWith(R.string.text_edit_name_note)).createDialog(binding.textViewProfileTitle.text.toString()) {
+            DialogHelper(
+                ctx,
+                getStringWith(R.string.text_edit),
+                getStringWith(R.string.text_edit_name_note)
+            ).createDialog(binding.textViewProfileTitle.text.toString()) {
                 binding.textViewProfileTitle.text = it
             }
         }
 
         binding.textViewProfileSubTitle.setOnClickListener {
-            DialogHelper(ctx, getStringWith(R.string.text_edit), getStringWith(R.string.text_edit_profession_note)).createDialog(binding.textViewProfileSubTitle.text.toString()) {
+            DialogHelper(
+                ctx,
+                getStringWith(R.string.text_edit),
+                getStringWith(R.string.text_edit_profession_note)
+            ).createDialog(binding.textViewProfileSubTitle.text.toString()) {
                 binding.textViewProfileSubTitle.text = it
             }
         }

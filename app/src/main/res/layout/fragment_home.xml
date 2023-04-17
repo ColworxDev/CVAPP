@@ -153,12 +153,11 @@
         android:text="@string/education"
         android:textColor="@color/black"
         android:layout_marginStart="20dp"
-        android:textSize="@dimen/heading_title_fonts"
-        />
+        android:textSize="@dimen/heading_title_fonts" />
 
-    <ListView
-        android:id="@+id/home_list"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_edu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
