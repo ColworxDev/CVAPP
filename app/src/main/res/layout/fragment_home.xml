@@ -79,7 +79,7 @@
             android:layout_below="@+id/textViewPhone"
             />
 
-        <TextView
+<!--        <TextView
             android:id="@+id/textViewlinkedIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
             android:layout_marginLeft="80dp"
             android:layout_toRightOf="@+id/textViewProfileTitle"
             android:layout_alignTop="@+id/textViewPhone"
-            />
+            />-->
 
     </RelativeLayout>
 
@@ -135,7 +135,7 @@
         android:id="@+id/textViewBio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is my bio description, i have n number of experience in a field"
+        android:text="I am a Software Engineer with over five years of experience. I am experienced in Android application development and Sprint Boot"
         android:textColor="@color/black"
         android:layout_marginLeft="20dp"
         android:clickable="true"

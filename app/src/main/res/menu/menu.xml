@@ -16,6 +16,13 @@
 
     <item
         app:showAsAction="never"
+        android:icon="@drawable/telegram_icon"
+        android:id="@+id/menu_item_telegram"
+        android:title="telegram" />
+
+<!--
+    <item
+        app:showAsAction="never"
         android:id="@+id/menu_item_export"
         android:title="Export" />
 
@@ -23,6 +30,7 @@
         app:showAsAction="never"
         android:id="@+id/menu_item_edit"
         android:title="To Edit click individual Texts" />
+-->
 
 
 </menu>

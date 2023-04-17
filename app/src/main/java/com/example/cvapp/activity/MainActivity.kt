@@ -69,8 +69,9 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.menu_item_linkin -> loadURL("https://linkedin.com")
             R.id.menu_item_github -> loadURL("https://github.com")
-            R.id.menu_item_export -> exportPDF()
-            R.id.menu_item_edit -> Toast.makeText(this, "Click on Labels or list to modify", Toast.LENGTH_SHORT).show()
+            R.id.menu_item_telegram -> loadURL("https://telegram.org/")
+//            R.id.menu_item_export -> exportPDF()
+//            R.id.menu_item_edit -> Toast.makeText(this, "Click on Labels or list to modify", Toast.LENGTH_SHORT).show()
         }
         return super.onOptionsItemSelected(item)
     }

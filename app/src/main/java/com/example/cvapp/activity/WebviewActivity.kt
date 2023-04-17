@@ -24,30 +24,30 @@ class WebviewActivity : AppCompatActivity() {
         binding.webview.settings.builtInZoomControls = true
         binding.webview.loadUrl(url)
 
-        binding.btnFwd.setOnClickListener {
-            binding.webview.goForward()
-        }
+//        binding.btnFwd.setOnClickListener {
+//            binding.webview.goForward()
+//        }
+//
+//        binding.btnBack.setOnClickListener {
+//            binding.webview.goBack()
+//        }
 
-        binding.btnBack.setOnClickListener {
-            binding.webview.goBack()
-        }
-
-        binding.edtSearch.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                val url = query?.let {
-                    //if (Patterns.WEB_URL.matcher(url).matches()) {
-                        binding.webview.loadUrl("http://$it")
-                    //}
-                } ?: run {
-                    binding.webview.loadUrl("http://www.google.com")
-                }
-                return true
-            }
-
-            override fun onQueryTextChange(newText: String): Boolean {
-                return true
-            }
-        })
+//        binding.edtSearch.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+//                val url = query?.let {
+//                    //if (Patterns.WEB_URL.matcher(url).matches()) {
+//                        binding.webview.loadUrl("http://$it")
+//                    //}
+//                } ?: run {
+//                    binding.webview.loadUrl("http://www.google.com")
+//                }
+//                return true
+//            }
+//
+//            override fun onQueryTextChange(newText: String): Boolean {
+//                return true
+//            }
+//        })
 
     }
 
