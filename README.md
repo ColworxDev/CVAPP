@@ -17,4 +17,5 @@ Assignment to create CV APP
  <img src="/screenshots/screen6.png" width="150" >
  <img src="/screenshots/screen7.png" width="150" >
  <img src="/screenshots/screen8.png" width="150" >
+ <img src="/screenshots/screen9.png" width="150" >
 </div>
