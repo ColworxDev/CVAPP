@@ -34,50 +34,50 @@
             android:id="@+id/textViewProfileTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/imageviewProfile"
+            android:layout_toEndOf="@+id/imageviewProfile"
             android:layout_marginTop="10dp"
-            android:text="Mickey Mouse"
+            android:text="@string/text_fullname"
             android:textColor="@color/white"
             android:textSize="@dimen/heading_fonts"
             android:clickable="true"
-            />
+            android:focusable="true" />
 
         <TextView
             android:id="@+id/textViewProfileSubTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Software Engineer"
+            android:text="@string/text_profession"
             android:clickable="true"
             android:textColor="@color/white"
             android:textSize="@dimen/heading_fonts"
-            android:layout_toRightOf="@+id/imageviewProfile"
+            android:layout_toEndOf="@+id/imageviewProfile"
             android:layout_below="@+id/textViewProfileTitle"
-            />
+            android:focusable="true" />
 
         <TextView
             android:id="@+id/textViewPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+6414517162"
+            android:text="@string/text_phone"
             android:clickable="true"
             android:textColor="@color/white"
             android:textSize="@dimen/heading_fonts"
-            android:layout_toRightOf="@+id/imageviewProfile"
+            android:layout_toEndOf="@+id/imageviewProfile"
             android:layout_below="@+id/textViewProfileSubTitle"
-            />
+            android:focusable="true" />
 
         <TextView
             android:id="@+id/textViewAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="304 W, Hempstead Ave, Fairfield IOWA, United States"
+            android:text="@string/text_address"
             android:textColor="@color/white"
             android:textSize="@dimen/heading_fonts"
             android:layout_marginTop="10dp"
             android:clickable="true"
-            android:layout_toRightOf="@+id/imageviewProfile"
+            android:layout_toEndOf="@+id/imageviewProfile"
             android:layout_below="@+id/textViewPhone"
-            />
+            android:focusable="true" />
 
 <!--        <TextView
             android:id="@+id/textViewlinkedIn"
@@ -125,9 +125,9 @@
         android:id="@+id/textViewHeadingBio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Summary"
+        android:text="@string/summary"
         android:textColor="@color/black"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:textSize="@dimen/heading_title_fonts"
         />
 
@@ -135,12 +135,12 @@
         android:id="@+id/textViewBio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I am a Software Engineer with over five years of experience. I am experienced in Android application development and Sprint Boot"
+        android:text="@string/i_am_a_software_engineer_with_over_five_years_of_experience_i_am_experienced_in_android_application_development_and_sprint_boot"
         android:textColor="@color/black"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:clickable="true"
         android:textSize="@dimen/heading_fonts"
-        />
+        android:focusable="true" />
 
     <Space
         android:layout_width="match_parent"
@@ -150,9 +150,9 @@
         android:id="@+id/textViewHeadingEduc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Education"
+        android:text="@string/education"
         android:textColor="@color/black"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:textSize="@dimen/heading_title_fonts"
         />
 

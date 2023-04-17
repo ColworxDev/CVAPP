@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:textSize="@dimen/heading_title_fonts"
-        android:text="Certifications"/>
+        android:text="@string/title_certifications"/>
 
     <ListView
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="Work history"
+        android:text="@string/title_work_history"
         />
 
     <ListView

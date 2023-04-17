@@ -17,6 +17,20 @@
     <string name="text_add">Add</string>
     <string name="hint_enter_skill">Enter skill</string>
     <string name="error_skill_empty">Skill should not be empty!</string>
+    <string name="title_projects">My Projects</string>
+    <string name="text_fullname">Mickey Mouse</string>
+    <string name="text_profession">Software Engineer</string>
+    <string name="text_phone">+6414517162</string>
+    <string name="text_address">304 W, Hempstead Ave, Fairfield IOWA, United States</string>
+    <string name="summary">Summary</string>
+    <string name="i_am_a_software_engineer_with_over_five_years_of_experience_i_am_experienced_in_android_application_development_and_sprint_boot">I am a Software Engineer with over five years of experience. I am experienced in Android application development and Sprint Boot</string>
+    <string name="education">Education</string>
+    <string name="text_home">Home</string>
+    <string name="skills">Skills</string>
+    <string name="work">Work</string>
+    <string name="projects">Projects</string>
+    <string name="title_certifications">Certifications</string>
+    <string name="title_work_history">Work history</string>
 
     <string-array name="education_items">
         <item>Maharishi International University (Ongoing)</item>

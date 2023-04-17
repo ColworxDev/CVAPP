@@ -17,27 +17,27 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home"
+            android:text="@string/text_home"
             android:icon="@drawable/home"
             />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Skills"
+            android:text="@string/skills"
             android:icon="@drawable/help"
             />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Work"
+            android:text="@string/work"
             android:icon="@drawable/work"
             />
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Projects"
+            android:text="@string/projects"
             android:icon="@drawable/contact"
             />
 
@@ -58,13 +58,14 @@
         android:layout_width="53dp"
         android:layout_height="71dp"
         android:layout_marginBottom="50dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
         android:clickable="true"
         app:fabSize="normal"
         android:foregroundGravity="right"
         android:src="@drawable/ic_add_entry"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.0"
+        android:focusable="true" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
